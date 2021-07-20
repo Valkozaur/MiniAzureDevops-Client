@@ -4,14 +4,12 @@ export const createTable = async (tableName) => {
     let table = {
         Name: tableName
     }
-    console.log(table);
-
-    return fetch(BASE_URL + TABLE, {
+    return await fetch(BASE_URL + TABLE, {
         method: "POST",
         headers: {
             'accept': 'application/json',
         },
-        mode: 'no-cors',
+        mode: 'cors',
         body: JSON.stringify(table)
     });
 }

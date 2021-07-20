@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import CreateTable from './components/CreateTable/CreateTable';
-import Table from './components/Table/Table';
+import DisplayTable from './components/DisplayTable/DisplayTable';
 
 function App() {
   return (
       <>
-        <CreateTable/>
+        <DisplayTable/>
       </>
   );
 }
