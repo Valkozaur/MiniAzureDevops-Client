@@ -1,13 +1,15 @@
 import { BASE_URL, TABLE } from "../../consts/endpoints";
 
-export const createTable = async (tableName) => {
-    let table = {
-        Name: tableName
+export const createTable = async (tableName, projectId) => {
+    const table = {
+        Name: tableName,
+        ProjectId: projectId
     }
     return await fetch(BASE_URL + TABLE, {
         method: "POST",
         headers: {
-            'accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
         },
         mode: 'cors',
         body: JSON.stringify(table)
@@ -15,6 +17,6 @@ export const createTable = async (tableName) => {
 }
 
 export const getTable = async (id) => {
-    let result = await fetch(BASE_URL + TABLE + `?tableId=${id}`);
-    return await result.json();
+    const result = await fetch(BASE_URL + TABLE + `?tableId=${id}`);
+    return result.json();
 }

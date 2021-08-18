@@ -1,12 +1,25 @@
 import { getTable } from "./fetchRequestServices/tableService"
+import { getColumns } from "./fetchRequestServices/columnService";
 
-const getTableData = async (tableId) => {
-    let tableData = {};
+export const getTableData = async (tableId) => {
 
     let table = await getTable(tableId);
-    //GetColumns
+    let columns = await getColumns(tableId);
     //GetItems//
-    return tableData;
+    // let tableData = 
+    // {
+    //     tableName: table.Name,
+    //     lanes: columns.map(x => {
+    //         id: x.Id,
+    //         title: x.Name,
+
+    //     })
+    // };
+
+    return {
+        table,
+        columns,
+    };
 }
 
 // const data = {
